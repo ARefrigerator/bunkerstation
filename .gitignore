@@ -54,3 +54,21 @@ players2.sqlite
 
 # Investigate logs that have an annoying tendency to generate during testing
 /data/investigate/*
+config-example/README feedback.txt
+config-example/ZAS.txt
+config-example/access levels.txt
+config-example/admin_ranks.txt
+config-example/admins.txt
+config-example/alienwhitelist.txt
+config-example/config.txt
+config-example/custom_items.txt
+config-example/custom_sprites.txt
+config-example/dbconfig.txt
+config-example/forumdbconfig.txt
+config-example/game_options.txt
+config-example/jobs.txt
+config-example/moderators.txt
+config-example/motd help.txt
+config-example/motd.txt
+config-example/rules.html
+config-example/svndir.txt
