@@ -300,7 +300,7 @@
 // Simple helper to face what you clicked on, in case it should be needed in more than one place
 /mob/proc/face_atom(var/atom/A)
 	if(stat != CONSCIOUS || locked_to || !A || !x || !y || !A.x || !A.y )
-		return
+		return 1
 
 	var/dx = A.x - x
 	var/dy = A.y - y
@@ -327,3 +327,8 @@
 			change_dir(EAST)
 		else
 			change_dir(WEST)
+
+/mob/living/face_atom(atom/A)
+	if(!..())
+		var/obj/screen/fullscreen/FS = screens["vision_cone"] //for mobs that should not have it, we change the fullscreen's icon_state to null.
+		FS.dir = dir

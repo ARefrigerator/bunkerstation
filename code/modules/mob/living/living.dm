@@ -16,6 +16,8 @@
 	if(can_butcher && !meat_amount)
 		meat_amount = size
 
+	overlay_fullscreen("vision_cone", /obj/screen/fullscreen/vision_cone)//DARK VISION CONE
+
 /mob/living/Destroy()
 	for(var/mob/living/silicon/robot/mommi/MoMMI in player_list)
 		for(var/image/I in static_overlays)
@@ -601,6 +603,8 @@ Thanks.
 				t7 = null
 	if (t7 && pulling && (Adjacent(pulling) || pulling.loc == loc))
 		. = ..()
+		var/obj/screen/fullscreen/FS = screens["vision_cone"]// DARK VISION CONE
+		FS.dir = dir
 
 		if (pulling && pulling.loc)
 			if(!isturf(pulling.loc))
@@ -654,6 +658,8 @@ Thanks.
 	else
 		stop_pulling()
 		. = ..()
+		var/obj/screen/fullscreen/FS = screens["vision_cone"]// DARK VISION CONE
+		FS.dir = dir
 
 	if ((s_active && !is_holder_of(src, s_active)))
 		s_active.close(src)
