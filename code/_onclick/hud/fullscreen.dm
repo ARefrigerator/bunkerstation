@@ -108,6 +108,9 @@
 	screen_loc = "WEST,SOUTH to EAST,NORTH"
 	icon_state = "druggy"
 
+/obj/screen/fullscreen/vision_cone
+	icon = 'icons/mob/vision_cone.dmi'
+	icon_state = "vision_cone"
 
 
 #undef FULLSCREEN_LAYER
