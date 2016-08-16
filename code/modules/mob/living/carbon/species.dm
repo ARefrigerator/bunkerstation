@@ -129,6 +129,8 @@ var/global/list/whitelisted_species = list("Human")
 	var/move_speed_mod = 0 //Higher value is slower, lower is faster.
 	var/can_be_hypothermic = 1
 	var/has_sweat_glands = 1
+	var/genitals = 0
+	var/anus = 0
 
 /datum/species/New()
 	..()

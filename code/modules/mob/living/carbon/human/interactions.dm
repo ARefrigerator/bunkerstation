@@ -59,14 +59,14 @@
 	genitals = 0
 */
 /mob/living/carbon/human/proc/is_nude()
-	return (!wear_suit && !w_uniform && underwear == "Nude") ? 1 : 0
+	return (!wear_suit) ? 1 : 0 // && !w_uniform
 
 /mob/living/carbon/human/make_interaction()
 	set_machine(src)
 
 	var/mob/living/carbon/human/H = usr
 	var/mob/living/carbon/human/P = H.partner
-	var/obj/item/organ/external/temp = H.organs_by_name["r_hand"]
+	var/datum/organ/external/temp = H.organs_by_name["r_hand"]
 	var/hashands = (temp && temp.is_usable())
 	if (!hashands)
 		temp = H.organs_by_name["l_hand"]
@@ -76,12 +76,12 @@
 	if (!hashands_p)
 		temp = P.organs_by_name["l_hand"]
 		hashands = (temp && temp.is_usable())
-	var/mouthfree = !((H.head && (H.head.flags & HEADCOVERSMOUTH)) || (H.wear_mask && (H.wear_mask.flags & MASKCOVERSMOUTH)))
-	var/mouthfree_p = !( (P.head && (P.head.flags & HEADCOVERSMOUTH)) || (P.wear_mask && (P.wear_mask.flags & MASKCOVERSMOUTH)))
+	var/mouthfree = !(H.wear_mask)//((H.head && (H.head.flags & HEADCOVERSMOUTH)) || (H.wear_mask && (H.wear_mask.flags & MASKCOVERSMOUTH)))
+	var/mouthfree_p = !(P.wear_mask)// ((P.head && (P.head.flags & HEADCOVERSMOUTH)) || (P.wear_mask && (P.wear_mask.flags & MASKCOVERSMOUTH)))
 	var/haspenis = ((H.gender == MALE && H.potenzia > -1 && H.species.genitals))
 	var/haspenis_p = ((P.gender == MALE && P.potenzia > -1  && P.species.genitals))
-	var/hasvagina = (H.gender == FEMALE && H.species.genitals && H.species.name != "Unathi" && H.species.name != "Stok")
-	var/hasvagina_p = (P.gender == FEMALE && P.species.genitals && P.species.name != "Unathi" && P.species.name != "Stok")
+	var/hasvagina = (H.gender == FEMALE && H.species.genitals)// && H.species.name != "Unathi" && H.species.name != "Stok")
+	var/hasvagina_p = (P.gender == FEMALE && P.species.genitals)// && P.species.name != "Unathi" && P.species.name != "Stok")
 	var/hasanus_p = P.species.anus
 	var/isnude = H.is_nude()
 	var/isnude_p = P.is_nude()
@@ -116,7 +116,7 @@
 				dat +=  {"Х <A href='?src=\ref[usr];interaction=pull'><font color=red>Pull big fluffy tail!</font></A><BR>"}
 				if(P.can_inject(H, 1))
 					dat +=  {"Х <A href='?src=\ref[usr];interaction=pet'>Pet.</A><BR>"}
-			dat +=  {"Х <A href='?src=\ref[usr];interaction=knock'><font color=red>Knock?</font></A><BR>"}
+			dat +=  {"Х <A href='?src=\ref[usr];interaction=knock'><font color=red>Knock upside the head.</font></A><BR>"}
 		dat +=  {"Х <A href='?src=\ref[usr];interaction=fuckyou'><font color=red>Insult.</font></A><BR>"}
 		dat +=  {"Х <A href='?src=\ref[usr];interaction=threaten'><font color=red>Threaten.</font></A><BR>"}
 
@@ -227,11 +227,11 @@ mob/living/carbon/human/proc/cum(mob/living/carbon/human/H as mob, mob/living/ca
 		add_logs(P, H, "came on")
 	H.erpcooldown = rand(200, 450)
 	if (H.multiorgasms > H.potenzia / 3)
-		if (H.staminaloss < P.potenzia * 4)
-			H.staminaloss += H.potenzia
-		if (H.staminaloss > 100)
-			H.druggy = 300
-			H.erpcooldown = 600
+		//if (H.staminaloss < P.potenzia * 4)
+		//	H.staminaloss += H.potenzia
+		//if (H.staminaloss > 100)
+		H.druggy = 300
+		H.erpcooldown = 600
 
 mob/living/carbon/human/proc/fuck(mob/living/carbon/human/H as mob, mob/living/carbon/human/P as mob, var/hole)
 	var/ya = "&#1103;"
@@ -301,9 +301,9 @@ mob/living/carbon/human/proc/fuck(mob/living/carbon/human/H as mob, mob/living/c
 			H.do_fucking_animation(P)
 
 		if("blowjob")
-			message = pick("sucks [P]'s dick.", "gives [P] head.")//, "сосет член [P].", "стимулирует член [P] [ya]зыком.")
-					if (prob(35))
-						message = pick("sucks [P] off.")
+			message = "sucks [P]'s dick." //message = pick("sucks [P]'s dick.", "gives [P] head.")//, "сосет член [P].", "стимулирует член [P] [ya]зыком.")
+			if (prob(35))
+				message = pick("sucks [P] off.")
 
 			/*switch(H.species.name)
 				if("Human", "Skrell", "Grey", "Nucleation", "Plasmaman")
@@ -416,8 +416,8 @@ mob/living/carbon/human/proc/fuck(mob/living/carbon/human/H as mob, mob/living/c
 
 			if (P.stat != DEAD && P.stat != UNCONSCIOUS)
 				P.lust += H.potenzia * 0.5
-				if (H.potenzia > 20)
-					P.staminaloss += H.potenzia * 0.25
+				//if (H.potenzia > 20)
+				//	P.staminaloss += H.potenzia * 0.25
 				if (P.lust >= P.resistenza)
 					P.cum(P, H)
 				else
@@ -463,7 +463,7 @@ mob/living/carbon/human/proc/fuck(mob/living/carbon/human/H as mob, mob/living/c
 			if (P.stat != DEAD && P.stat != UNCONSCIOUS)
 				if (H.potenzia > 13)
 					P.lust += H.potenzia * 0.25
-					P.staminaloss += H.potenzia * 0.25
+				//	P.staminaloss += H.potenzia * 0.25
 				else
 					P.lust += H.potenzia * 0.75
 				if (P.lust >= P.resistenza)
@@ -539,8 +539,8 @@ mob/living/carbon/human/proc/fuck(mob/living/carbon/human/H as mob, mob/living/c
 				P.visible_message("<font color=purple>[H] [message].</font>")
 				playsound(P.loc.loc, 'sound/effects/clang.ogg', 50, 0, 0)
 			H.lust += P.potenzia
-			if (P.potenzia > 20)
-				H.staminaloss += P.potenzia * 0.25
+			//if (P.potenzia > 20)
+			//	H.staminaloss += P.potenzia * 0.25
 			if (H.lust >= H.resistenza)
 				H.cum(H, P)
 			else
@@ -557,7 +557,7 @@ mob/living/carbon/human/proc/fuck(mob/living/carbon/human/H as mob, mob/living/c
 				playsound(loc, "honk/sound/interactions/champ[rand(1, 2)].ogg", 50, 1, -1)
 
 mob/living/carbon/human/proc/moan()
-	var/ya = "&#1103;"
+	//var/ya = "&#1103;"
 	var/mob/living/carbon/human/H = src
 	switch(species.name)
 		if ("Human")//, "Skrell", "Slime People", "Grey", "Nucleation", "Plasmaman")
