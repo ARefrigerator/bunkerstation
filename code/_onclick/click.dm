@@ -59,6 +59,10 @@
 		CtrlClickOn(A)
 		return
 
+	if(modifiers["right"])
+		RightClickOn(A)
+		return
+
 	if(isStunned())
 		return
 
@@ -204,6 +208,17 @@
 /atom/proc/MiddleClick(var/mob/M as mob)
 	return
 */
+
+/*
+	Right Click
+	Used for interactions and aiming
+*/
+/mob/proc/RightClickOn(var/atom/A)
+	A.RightClick(src)
+	return
+
+/atom/proc/RightClick(var/mob/user)
+	return
 
 /*
 	Shift click
