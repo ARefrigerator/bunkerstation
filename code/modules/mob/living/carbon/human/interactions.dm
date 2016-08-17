@@ -1,6 +1,7 @@
 /**********************************
 *******Interactions code by HONKERTRON feat TestUnit********
 **Contains a lot ammount of ERP and MEHANOYEBLYA**
+**CREDIT TO ATMTA STATION FOR MOST OF THIS CODE, I ONLY MADE IT WORK IN /vg/ - Matt
 ***********************************/
 
 /mob/living/carbon/human/MouseDrop_T(mob/M as mob, mob/user as mob)
