@@ -118,6 +118,10 @@ var/global/list/moneytypes = list(
 		return taking
 	return 0
 
+
+/obj/item/weapon/spacecash/proc/get_total()
+	return worth * amount
+
 /obj/item/weapon/spacecash/afterattack(atom/A as mob|obj, mob/user as mob)
 	if(istype(A, /obj/item/weapon/spacecash))
 		var/obj/item/weapon/spacecash/cash = A
