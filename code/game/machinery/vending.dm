@@ -428,7 +428,7 @@ var/global/num_vending_terminals = 1
 	if(currently_vending.price > cashmoney.get_total())
 		// This is not a status display message, since it's something the character
 		// themselves is meant to see BEFORE putting the money in
-		to_chat(usr, "[bicon(cashmoney)] <span class='warning'>That is not enough money.</span>")
+		to_chat(user, "[bicon(cashmoney)] <span class='warning'>That is not enough money.</span>")
 		return 0
 
 	// Bills (banknotes) cannot really have worth different than face value,
@@ -438,7 +438,6 @@ var/global/num_vending_terminals = 1
 
 	visible_message("<span class='info'>[usr] inserts a credit chip into [src].</span>")
 	var/left = cashmoney.get_total() - currently_vending.price
-	//usr.unEquip(cashmoney)
 	qdel(cashmoney)
 
 	if(left)
@@ -446,9 +445,6 @@ var/global/num_vending_terminals = 1
 
 	src.vend(src.currently_vending, usr)
 	currently_vending = null
-
-	// Vending machines have no idea who paid with cash
-	//credit_purchase("(cash)")
 	return 1
 
 /obj/machinery/vending/scan_card(var/obj/item/weapon/card/I)
