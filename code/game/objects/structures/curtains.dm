@@ -77,5 +77,20 @@
 /obj/structure/curtain/open/shower/security
 	color = "#AA0000"
 
+/obj/structure/curtain/red
+	icon_state = "red_closed"
+
+/obj/structure/curtain/red/open
+	icon_state = "red_open"
+	layer = SHOWER_CLOSED_LAYER
+	opacity = 0
+
+/obj/structure/curtain/red/toggle()
+	..()
+	if(opacity)
+		icon_state = "red_closed"
+	else
+		icon_state = "red_open"
+
 #undef SHOWER_OPEN_LAYER
 #undef SHOWER_CLOSED_LAYER

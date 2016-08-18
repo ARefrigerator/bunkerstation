@@ -78,3 +78,9 @@
 		name = "Narsie Bistro"
 		desc = "The last pub before the World's End."
 		cult = 1
+
+/obj/structure/sign/double/denofsin
+	name = "Den of Sin"
+	desc = "A place for sinners, theves, and general metro people to hang out."
+	icon = 'icons/obj/barsigns.dmi'
+	icon_state = "denofsin"

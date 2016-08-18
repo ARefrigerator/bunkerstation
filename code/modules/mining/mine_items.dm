@@ -180,7 +180,7 @@ proc/move_mining_shuttle()
 /obj/item/weapon/pickaxe
 	name = "pickaxe"
 	icon = 'icons/obj/items.dmi'
-	icon_state = "pickaxe"
+	icon_state = "pickaxe_old"
 	flags = FPRINT
 	siemens_coefficient = 1
 	slot_flags = SLOT_BELT

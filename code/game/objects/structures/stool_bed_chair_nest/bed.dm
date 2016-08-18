@@ -187,3 +187,37 @@
 /datum/locking_category/bed/roller
 	pixel_y_offset = 6
 	flags = DENSE_WHEN_LOCKING | LOCKED_SHOULD_LIE
+
+/obj/structure/bed/mattress
+	name = "mattress"
+	desc = "An old mattress, there's no frame. At least it's kinda comfy."
+	icon_state = "mattress"
+
+/obj/structure/bed/mattress/pillow
+	name = "mattress with pillow"
+	desc = "Aw sweet, this mattress has a pillow! Still no frame."
+	icon_state = "mattress_pillow"
+
+/obj/structure/bed/mattress/dirty
+	name = "dirty mattress"
+	desc = "An old mattress, there's no frame. It's also dirty with sweat and age."
+	icon_state = "mattress_dirty"
+
+/obj/structure/bed/mattress/blood
+	name = "bloody mattress"
+	desc = "An old mattress, there's no frame. It's covered in blood, you might get AIDs if you sleep on this."
+	icon_state = "mattress_bloody"
+
+/obj/structure/bed/mattress/dried_blood
+	name = "bloody mattress"
+	desc = "An old mattress, there's no frame. It's covered in crusty, dried, brown blood."
+	icon_state = "mattress_dried"
+/obj/structure/bed/mattress/holes
+	name = "mattress with holes"
+	desc = "An old mattress, there's no frame. There's also holes all throughout it. It must belong to the chaplain then! No seriously, sleeping on this thing is a sin to your body."
+	icon_state = "mattress_holes"
+
+/obj/structure/bed/mattress/mold
+	name = "moldy mattress"
+	desc = "Ew, this mattress has mold on it, do you really want to sleep on it?"
+	icon_state = "mattress_mossy"

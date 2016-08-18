@@ -142,3 +142,8 @@
 /obj/structure/mirror/kick_act()
 	..()
 	shatter()
+
+/obj/structure/mirror/large
+	name = "large mirror"
+	desc = "A large mirror with a wooden frame."
+	icon_state = "mirror_large"

@@ -1,3 +1,4 @@
+/*
 /datum/job/cmo
 	title = "Chief Medical Officer"
 	flag = CMO
@@ -39,22 +40,22 @@
 		else
 			H.equip_or_collect(new H.species.survival_gear(H.back), slot_in_backpack)
 		return 1
-
+*/
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /datum/job/doctor
 	title = "Medical Doctor"
 	flag = DOCTOR
 	department_flag = MEDSCI
-	faction = "Station"
+	faction = "Bunker"
 	total_positions = 5
 	spawn_positions = 3
-	supervisors = "the chief medical officer"
+	supervisors = "the manager"
 	selection_color = "#ffeef0"
 	idtype = /obj/item/weapon/card/id/medical
 	access = list(access_medical, access_morgue, access_surgery, access_chemistry, access_virology, access_genetics, access_eva)
 	minimal_access = list(access_medical, access_morgue, access_surgery, access_virology)
-	alt_titles = list("Surgeon", "Emergency Physician", "Nurse")
+//	alt_titles = list("Surgeon", "Emergency Physician", "Nurse")
 
 	pdaslot=slot_belt
 	pdatype=/obj/item/device/pda/medical
@@ -68,7 +69,7 @@
 				H.equip_or_collect(new /obj/item/weapon/storage/backpack/satchel_med(H), slot_back)
 			if(4) H.equip_or_collect(new /obj/item/weapon/storage/backpack/satchel(H), slot_back)
 		if (H.mind.role_alt_title)
-			switch(H.mind.role_alt_title)
+/*			switch(H.mind.role_alt_title)
 				if("Emergency Physician")
 					H.equip_or_collect(new /obj/item/clothing/under/rank/medical(H), slot_w_uniform)
 					H.equip_or_collect(new /obj/item/clothing/suit/storage/fr_jacket(H), slot_wear_suit)
@@ -88,7 +89,7 @@
 							H.equip_or_collect(new /obj/item/clothing/under/rank/nurse(H), slot_w_uniform)
 						H.equip_or_collect(new /obj/item/clothing/head/nursehat(H), slot_head)
 					else
-						H.equip_or_collect(new /obj/item/clothing/under/rank/medical/purple(H), slot_w_uniform)
+						H.equip_or_collect(new /obj/item/clothing/under/rank/medical/purple(H), slot_w_uniform)*/
 		else
 			H.equip_or_collect(new /obj/item/clothing/under/rank/medical(H), slot_w_uniform)
 			H.equip_or_collect(new /obj/item/clothing/suit/storage/labcoat(H), slot_wear_suit)
@@ -103,7 +104,7 @@
 		return 1
 
 
-
+/*
 //Chemist is a medical job damnit	//YEAH FUCK YOU SCIENCE	-Pete	//Guys, behave -Erro
 /datum/job/chemist
 	title = "Chemist"
@@ -242,4 +243,5 @@
 		else
 			H.equip_or_collect(new H.species.survival_gear(H.back), slot_in_backpack)
 		return 1
+*/
 */

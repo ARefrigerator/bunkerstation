@@ -498,7 +498,7 @@ turf/unsimulated/mineral/ChangeTurf(var/turf/N, var/tell_universe=1, var/force_l
 	temperature = TCMB
 
 /turf/unsimulated/floor/asteroid //floor piece
-	name = "Asteroid"
+	name = "dirt"
 	icon = 'icons/turf/floors.dmi'
 	icon_state = "asteroid"
 	oxygen = 0.01
@@ -1076,3 +1076,11 @@ turf/unsimulated/mineral/ChangeTurf(var/turf/N, var/tell_universe=1, var/force_l
 	if(locate(/obj/structure/lattice) in contents)
 		return BUILD_SUCCESS
 	return BUILD_FAILURE
+
+/turf/unsimulated/floor/asteroid/surface
+	name = "dirt"
+	icon_state = "surface"
+
+/turf/unsimulated/floor/asteroid/surface/New()
+	..()
+	dir = pick(1,2,4,8)

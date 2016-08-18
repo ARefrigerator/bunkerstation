@@ -444,3 +444,7 @@ var/list/poddoors = list()
 /obj/machinery/door/poddoor/filler_object
 	name = ""
 	icon_state = ""
+
+/obj/machinery/door/poddoor/threetile
+	width = 3
+	icon = 'icons/obj/doors/1x3blast_hor.dmi'

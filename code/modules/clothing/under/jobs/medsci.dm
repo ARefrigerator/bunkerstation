@@ -187,6 +187,19 @@
 	flags = FPRINT  | ONESIZEFITSALL
 	species_fit = list(VOX_SHAPED)
 
+/obj/item/clothing/under/rank/medical/ghetto
+	name = "barber surgeon outfit"
+	desc = "A worn and tough uniform worn by medical personel who may or may not have a licence."
+	icon_state = "doctor_m"
+	item_state = "doctor_m"
+	_color = "doctor_m"
+
+/obj/item/clothing/under/rank/medical/ghetto/female
+	name = "barber surgeon outfit"
+	icon_state = "doctor_f"
+	item_state = "doctor_f"
+	_color = "doctor_f"
+
 //paramedic
 /obj/item/clothing/under/rank/medical/paramedic
 	desc = "It's made of a special fiber that provides minor protection against biohazards and radiation. It has a cross on the chest denoting that the wearer is trained medical personnel."

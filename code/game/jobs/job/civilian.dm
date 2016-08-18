@@ -1,4 +1,5 @@
 //Food
+
 /datum/job/bartender
 	title = "Bartender"
 	flag = BARTENDER
@@ -6,7 +7,7 @@
 	faction = "Station"
 	total_positions = 1
 	spawn_positions = 1
-	supervisors = "the head of personnel"
+	supervisors = "Yourself"
 	selection_color = "#dddddd"
 	access = list(access_hydroponics, access_bar, access_kitchen, access_morgue, access_weapons)
 	minimal_access = list(access_bar,access_weapons)
@@ -47,7 +48,7 @@
 		return 1
 
 
-
+/*
 /datum/job/chef
 	title = "Chef"
 	flag = CHEF
@@ -77,21 +78,21 @@
 		else
 			H.equip_or_collect(new H.species.survival_gear(H.back), slot_in_backpack)
 		return 1
-
+*/
 
 
 /datum/job/hydro
 	title = "Botanist"
 	flag = BOTANIST
-	department_flag = CIVILIAN
+	department_flag = MEDSCI
 	faction = "Station"
 	total_positions = 3
 	spawn_positions = 2
-	supervisors = "the head of personnel"
+	supervisors = "The Manager"
 	selection_color = "#dddddd"
 	access = list(access_hydroponics, access_bar, access_kitchen, access_morgue) // Removed tox and chem access because STOP PISSING OFF THE CHEMIST GUYS // //Removed medical access because WHAT THE FUCK YOU AREN'T A DOCTOR YOU GROW WHEAT //Given Morgue access because they have a viable means of cloning.
 	minimal_access = list(access_hydroponics, access_morgue) // Removed tox and chem access because STOP PISSING OFF THE CHEMIST GUYS // //Removed medical access because WHAT THE FUCK YOU AREN'T A DOCTOR YOU GROW WHEAT //Given Morgue access because they have a viable means of cloning.
-	alt_titles = list("Hydroponicist", "Beekeeper", "Gardener")
+//	alt_titles = list("Hydroponicist", "Beekeeper", "Gardener")
 
 	pdaslot=slot_belt
 	pdatype=/obj/item/device/pda/botanist
@@ -130,11 +131,11 @@
 /datum/job/qm
 	title = "Quartermaster"
 	flag = QUARTERMASTER
-	department_flag = CIVILIAN
+	department_flag = ENGSEC
 	faction = "Station"
 	total_positions = 1
 	spawn_positions = 1
-	supervisors = "the head of personnel"
+	supervisors = "the manager"
 	selection_color = "#dddddd"
 	idtype = /obj/item/weapon/card/id/supply
 	access = list(access_maint_tunnels, access_mailsorting, access_cargo, access_cargo_bot, access_qm, access_mint, access_mining, access_mining_station, access_taxi)
@@ -163,7 +164,7 @@
 /datum/job/cargo_tech
 	title = "Cargo Technician"
 	flag = CARGOTECH
-	department_flag = CIVILIAN
+	department_flag = ENGSEC
 	faction = "Station"
 	total_positions = 2
 	spawn_positions = 2
@@ -192,13 +193,13 @@
 
 
 /datum/job/mining
-	title = "Shaft Miner"
+	title = "Miner"//"Shaft Miner"
 	flag = MINER
 	department_flag = CIVILIAN
 	faction = "Station"
 	total_positions = 3
 	spawn_positions = 3
-	supervisors = "the quartermaster and the head of personnel"
+	supervisors = "Anyone stronger than you"
 	selection_color = "#dddddd"
 	idtype = /obj/item/weapon/card/id/supply
 	access = list(access_maint_tunnels, access_mailsorting, access_cargo, access_cargo_bot, access_mint, access_mining, access_mining_station)
@@ -227,7 +228,7 @@
 			H.equip_or_collect(new /obj/item/weapon/crowbar(H), slot_in_backpack)
 			H.equip_or_collect(new /obj/item/weapon/storage/bag/ore(H), slot_in_backpack)
 		return 1
-
+/*
 /datum/job/clown
 	title = "Clown"
 	flag = CLOWN
@@ -270,9 +271,9 @@
 		H.real_name = pick(clown_names)
 		H.rename_self("clown")
 		return 1
+*/
 
-
-
+/*
 /datum/job/mime
 	title = "Mime"
 	flag = MIME
@@ -341,7 +342,8 @@
 		message_admins("[M.name] ([M.ckey]) has broken their oath of silence. (<A HREF='?_src_=holder;adminplayerobservejump=\ref[src]'>JMP</a>)")
 		to_chat(M, "<span class = 'notice'>An unsettling feeling surrounds you...</span>")
 		return
-
+*/
+/*
 /datum/job/janitor
 	title = "Janitor"
 	flag = JANITOR
@@ -368,9 +370,9 @@
 			H.equip_or_collect(new H.species.survival_gear(H.back), slot_in_backpack)
 		// Now spawns on the janikart.  H.equip_or_collect(new /obj/item/key(H), slot_l_store)
 		return 1
+*/
 
-
-
+/*
 //More or less assistants
 /datum/job/librarian
 	title = "Librarian"
@@ -399,9 +401,9 @@
 		else
 			H.equip_or_collect(new H.species.survival_gear(H.back), slot_in_backpack)
 		return 1
+*/
 
-
-
+/*
 //var/global/lawyer = 0//Checks for another lawyer //This changed clothes on 2nd lawyer, both IA get the same dreds.
 /datum/job/lawyer
 	title = "Internal Affairs Agent"
@@ -446,3 +448,4 @@
 		L.imp_in = H
 		L.implanted = 1
 		return 1
+*/
