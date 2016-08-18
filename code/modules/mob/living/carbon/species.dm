@@ -129,6 +129,8 @@ var/global/list/whitelisted_species = list("Human")
 	var/move_speed_mod = 0 //Higher value is slower, lower is faster.
 	var/can_be_hypothermic = 1
 	var/has_sweat_glands = 1
+	var/genitals = 0
+	var/anus = 0
 
 /datum/species/New()
 	..()
@@ -276,7 +278,7 @@ var/global/list/whitelisted_species = list("Human")
 	heat_level_2 = 480 //Default 400
 	heat_level_3 = 1100 //Default 1000
 	has_sweat_glands = 0
-	flags = IS_WHITELISTED | HAS_LIPS | HAS_UNDERWEAR | HAS_TAIL
+	flags = HAS_LIPS | HAS_UNDERWEAR | HAS_TAIL//IS_WHITELISTED |
 
 	flesh_color = "#34AF10"
 
@@ -291,7 +293,7 @@ var/global/list/whitelisted_species = list("Human")
 	known_languages = list(LANGUAGE_CLATTER)
 	attack_verb = "punches"
 	has_sweat_glands = 0
-	flags = IS_WHITELISTED | HAS_LIPS | NO_BREATHE | NO_BLOOD | NO_SKIN
+	flags = HAS_LIPS | NO_BREATHE | NO_BLOOD | NO_SKIN//IS_WHITELISTED |
 
 	chem_flags = NO_DRINK | NO_EAT | NO_INJECT
 
@@ -380,7 +382,7 @@ var/global/list/whitelisted_species = list("Human")
 
 	primitive = /mob/living/carbon/monkey/tajara
 
-	flags = IS_WHITELISTED | HAS_LIPS | HAS_UNDERWEAR | HAS_TAIL
+	flags = HAS_LIPS | HAS_UNDERWEAR | HAS_TAIL// IS_WHITELISTED |
 
 	default_mutations=list(M_CLAWS)
 
@@ -447,7 +449,7 @@ var/global/list/whitelisted_species = list("Human")
 
 	primitive = /mob/living/carbon/monkey // TODO
 
-	flags = IS_WHITELISTED | HAS_LIPS | HAS_UNDERWEAR | CAN_BE_FAT
+	flags = HAS_LIPS | HAS_UNDERWEAR | CAN_BE_FAT//IS_WHITELISTED |
 
 	// Both must be set or it's only a 45% chance of manifesting.
 	default_mutations=list(M_REMOTE_TALK)
@@ -512,7 +514,7 @@ var/global/list/whitelisted_species = list("Human")
 	known_languages = list(LANGUAGE_SKRELLIAN)
 	primitive = /mob/living/carbon/monkey/skrell
 
-	flags = IS_WHITELISTED | HAS_LIPS | HAS_UNDERWEAR
+	flags = HAS_LIPS | HAS_UNDERWEAR//IS_WHITELISTED |
 
 	flesh_color = "#8CD7A3"
 
@@ -537,7 +539,7 @@ var/global/list/whitelisted_species = list("Human")
 	breath_type = "nitrogen"
 
 	default_mutations = list(M_BEAK, M_TALONS)
-	flags = IS_WHITELISTED | NO_SCAN
+	flags = NO_SCAN//IS_WHITELISTED |
 
 	blood_color = "#2299FC"
 	flesh_color = "#808D11"
@@ -718,7 +720,7 @@ var/global/list/whitelisted_species = list("Human")
 	heat_level_2 = 3000
 	heat_level_3 = 4000
 
-	flags = IS_WHITELISTED | NO_BREATHE | REQUIRE_LIGHT | NO_SCAN | IS_PLANT | RAD_ABSORB | NO_BLOOD | IS_SLOW | NO_PAIN
+	flags = NO_BREATHE | REQUIRE_LIGHT | NO_SCAN | IS_PLANT | RAD_ABSORB | NO_BLOOD | IS_SLOW | NO_PAIN//IS_WHITELISTED |
 
 	blood_color = "#004400"
 	flesh_color = "#907E4A"

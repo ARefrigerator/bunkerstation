@@ -173,6 +173,9 @@
 		else*/
 		msg += "[t_He] [t_is] wearing [bicon(wear_id)] \a [wear_id].\n"
 
+	if(is_nude() && gender == MALE && species.genitals)//Interactions
+		msg += "<B>Penis size: [potenzia].</B>\n"
+
 	switch(jitteriness)
 		if(JITTER_HIGH to INFINITY)
 			msg += "<span class='danger'>[t_He] [t_is] convulsing violently!</span>\n"

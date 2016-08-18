@@ -48,6 +48,23 @@
 	var/last_fired = 0
 
 	var/conventional_firearm = 1	//Used to determine whether, when examined, an /obj/item/weapon/gun/projectile will display the amount of rounds remaining.
+	var/saftey = 1 //Whether or not the saftey is on. 0 is off, 1 is on
+
+/obj/item/weapon/gun/AltClick(var/mob/user)//Toggling that saftey fam.
+	if(user.get_active_hand() != src) return 0	//If it's not in your active hand than it won't toggle.
+	if(saftey)
+		saftey = 0
+		to_chat(user, "<span class='warning'>You flick the saftey off, ready to fire.")
+	else
+		saftey = 1
+		to_chat(user, "<span class='warning'>You flick the saftey on, it's safer this way.")
+/obj/item/weapon/gun/examine(mob/user)
+	..()
+	if(saftey)
+		to_chat(user, "<span class='warning'>The saftey appears to be on.")
+	else
+		to_chat(user, "<span class='warning'>The saftey is off!")
+
 
 /obj/item/weapon/gun/proc/ready_to_fire()
 	if(world.time >= last_fired + fire_delay)
@@ -95,6 +112,11 @@
 	if(!firing_dexterity)
 		if(display_message)
 			to_chat(user, "<span class='warning'>You don't have the dexterity to do this!</span>")
+		return 0
+	
+	if(saftey)
+		to_chat(user, "<span class='warning'>The saftey is on!</span>")
+		playsound(user, empty_sound, 100, 1)
 		return 0
 
 	if(istype(user, /mob/living))
