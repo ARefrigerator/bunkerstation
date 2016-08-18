@@ -77,7 +77,7 @@
 	if (!hashands_p)
 		temp = P.organs_by_name["l_hand"]
 		hashands = (temp && temp.is_usable())
-	var/mouthfree = !(H.wear_mask)//((H.head && (H.head.flags & HEADCOVERSMOUTH)) || (H.wear_mask && (H.wear_mask.flags & MASKCOVERSMOUTH)))
+	var/mouthfree = !(H.wear_mask)//((H.head && (H.head.flags & HEADCOVERSMOUTH)) || (H.wear_mask && (H.wear_mask.flags & MASKCOVERSMOUTH)))//WE HAVE NO HEAD COVERS MASK FLAG - MATT
 	var/mouthfree_p = !(P.wear_mask)// ((P.head && (P.head.flags & HEADCOVERSMOUTH)) || (P.wear_mask && (P.wear_mask.flags & MASKCOVERSMOUTH)))
 	var/haspenis = ((H.gender == MALE && H.potenzia > -1 && H.species.genitals))
 	var/haspenis_p = ((P.gender == MALE && P.potenzia > -1  && P.species.genitals))
@@ -96,7 +96,7 @@
 	dat +=  {"Х <A href='?src=\ref[usr];interaction=bow'>Bow.</A><BR>"}
 	//if (Adjacent(P))
 	//	dat +=  {"Х <A href='?src=\ref[src];interaction=handshake'>ѕоприветствовать.</A><BR>"}
-	//else
+	//else																						//I DON'T KNOW WHAT THE FUCK THIS SAYS BUT IT WAS ALREADY COMMENTED OUT WHEN I GOT HERE - MATT
 	//	dat +=  {"Х <A href='?src=\ref[src];interaction=wave'>ѕоприветствовать.</A><BR>"}
 	if (hashands)
 		dat +=  {"<font size=3><B>Hands:</B></font><BR>"}
@@ -170,8 +170,8 @@
 	var/lastmoan
 
 mob/living/carbon/human/proc/cum(mob/living/carbon/human/H as mob, mob/living/carbon/human/P as mob, var/hole = "floor")
-	var/message = "кончает на пол!"
-	//var/ya = "&#1103;"
+	var/message = "кончает на пол!"//No idea what this means.
+	//var/ya = "&#1103;"//Not needed for english.
 	var/turf/T
 
 	if (H.gender == MALE)
@@ -190,7 +190,7 @@ mob/living/carbon/human/proc/cum(mob/living/carbon/human/H as mob, mob/living/ca
 				C.blood_DNA[source.data["blood_DNA"]] = "O+"
 
 		if (H.species.genitals)
-			if (hole == "mouth" || H.zone_sel.selecting == "mouth")
+			if (hole == "mouth" || H.zone_sel.selecting == "mouth")//I commented out the russian. I had to guess what they meant off of context clues. I'm very sorry.
 				message = pick("cums right in [P]'s mouth.")//, "целитс[ya] в лицо [P], стрел[ya]ет тугой струЄй малафьи, но промахиваетс[ya].", "разбрызгивает сем[ya] на лицо [P].", "кончает на пол.")
 
 			else if (hole == "vagina")
@@ -228,7 +228,7 @@ mob/living/carbon/human/proc/cum(mob/living/carbon/human/H as mob, mob/living/ca
 		add_logs(P, H, "came on")
 	H.erpcooldown = rand(200, 450)
 	if (H.multiorgasms > H.potenzia / 3)
-		//if (H.staminaloss < P.potenzia * 4)
+		//if (H.staminaloss < P.potenzia * 4)//We don't have stamina system in here yet. - Matt
 		//	H.staminaloss += H.potenzia
 		//if (H.staminaloss > 100)
 		H.druggy = 300
@@ -244,7 +244,7 @@ mob/living/carbon/human/proc/fuck(mob/living/carbon/human/H as mob, mob/living/c
 
 			message = pick("licks [P].", "sucks [P]'s pussy.")
 			//if (prob(35))
-			//	switch(P.species.name)
+			//	switch(P.species.name)//No need
 			//		if("Human", "Slime People")
 			//			message = pick("вылизывает [P].", "полирует промежность [P] [ya]зыком.", "отлизывает [P].", "ласкает [P] [ya]зычком.", "погружает свой [ya]зык в [P]", "играетс[ya] с [P] [ya]зычком", "медленно проводит [ya]зыком вдоль промежности [P]")
 			//		if("Tajaran", "Vulpkanin")
