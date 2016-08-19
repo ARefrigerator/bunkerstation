@@ -92,7 +92,8 @@
 		if("Bartender", "Chef")
 			suit=/obj/item/clothing/suit/space/plasmaman/service
 			helm=/obj/item/clothing/head/helmet/space/plasmaman/service
-		if("Cargo Technician", "Quartermaster")
+//		if("Cargo Technician", "Quartermaster")
+		if("Munitions Technician", "Munitions Officer")
 			suit=/obj/item/clothing/suit/space/plasmaman/cargo
 			helm=/obj/item/clothing/head/helmet/space/plasmaman/cargo
 		if("Shaft Miner")

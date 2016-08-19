@@ -127,7 +127,8 @@ var/list/uplink_items = list()
 	desc = "This extra-strong wrapping paper is perfect for concealing bodies or trapping a victim with no escape. Simply apply directly to the victim and wrap them up into a regular-looking delivery package. Takes about three seconds to wrap."
 	item = /obj/item/stack/package_wrap/syndie
 	cost = 2
-	job = list("Cargo Technician", "Quartermaster")
+	job = list("Munitions Technician", "Munitions Officer")
+//	job = list("Cargo Technician", "Quartermaster")
 
 /datum/uplink_item/jobspecific/syndiepaper/spawn_item(var/turf/loc, var/obj/item/device/uplink/U, mob/user)
 	U.uses -= max(cost, 0)
