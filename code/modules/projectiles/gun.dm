@@ -56,7 +56,7 @@
 ###JAMMING AND SAFTEY BABY!###
 */
 obj/item/weapon/gun/proc/jam()	
-	if(!jammed && prob(jamchance))//Checking to see whether or not it'll jam. If it's alreayd jammed it's not going to jam it again.
+	if(!jammed && prob(jamchance))//Checking to see whether or not it'll jam. If it's already jammed it's not going to jam it again.
 		jammed = 1
 		return 1 
 	else 
