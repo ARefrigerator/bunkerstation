@@ -48,19 +48,20 @@
 	var/last_fired = 0
 
 	var/conventional_firearm = 1	//Used to determine whether, when examined, an /obj/item/weapon/gun/projectile will display the amount of rounds remaining.
-	var/saftey = 1 //Whether or not the saftey is on. 0 is off, 1 is on
+	var/safety = 1 //Whether or not the safety is on. 0 is off, 1 is on
 	var/jamchance = 0 //The probability the gun will jam.
 	var/jammed = 0 //Whether or not the gun is jammed. 1 means it is.
 
 /*
-###JAMMING AND SAFTEY BABY!###
+###JAMMING AND SAFETY BABY!###
 */
 obj/item/weapon/gun/proc/jam()	
 	if(!jammed && prob(jamchance))//Checking to see whether or not it'll jam. If it's already jammed it's not going to jam it again.
 		jammed = 1
 		return 1 
-	else 
+	else
 		return 0
+
 /obj/item/weapon/gun/verb/unjam(mob/user)//Leaving this as a verb until right click procs are in place.
 	if(jammed)
 		jammed = 0
@@ -69,23 +70,24 @@ obj/item/weapon/gun/proc/jam()
 	else 
 		to_chat(user, "<span class='notice'>Your gun isn't jammed.</span>")
 
-/obj/item/weapon/gun/AltClick(var/mob/user)//Toggling that saftey fam.
+/obj/item/weapon/gun/AltClick(var/mob/user)//Toggling that safety fam.
 	if(user.get_active_hand() != src) return 0	//If it's not in your active hand than it won't toggle.
-	if(saftey)
-		saftey = 0
-		to_chat(user, "<span class='warning'>You flick the saftey off, ready to fire.")
+	if(safety)
+		safety = 0
+		to_chat(user, "<span class='warning'>You flick the safety off, ready to fire.")
 	else
-		saftey = 1
-		to_chat(user, "<span class='warning'>You flick the saftey on, it's safer this way.")
+		safety = 1
+		to_chat(user, "<span class='warning'>You flick the safety on, it's safer this way.")
+
 /obj/item/weapon/gun/examine(mob/user)
 	..()
 	if(jammed)
-		to_chat(user, "<span class='warning'>A bullet seems to be stuck in it.")
+		to_chat(user, "<span class='notice'>A bullet seems to be stuck in it.")
 
-	if(saftey)
-		to_chat(user, "<span class='warning'>The saftey appears to be on.")
-	if(!saftey)
-		to_chat(user, "<span class='warning'>The saftey is off!")
+	if(safety)
+		to_chat(user, "<span class='warning'>The safety appears to be on.")
+	if(!safety)
+		to_chat(user, "<span class='warning'>The safety is off!")
 
 
 /obj/item/weapon/gun/proc/ready_to_fire()
@@ -146,8 +148,8 @@ obj/item/weapon/gun/proc/jam()
 		playsound(user, empty_sound, 100, 1)
 		return 0
 
-	if(saftey)//Checking to see if the saftey is on.
-		to_chat(user, "<span class='warning'>The saftey is on!</span>")
+	if(safety)//Checking to see if the safety is on.
+		to_chat(user, "<span class='warning'>The safety is on!</span>")
 		playsound(user, empty_sound, 100, 1)
 		return 0
 
