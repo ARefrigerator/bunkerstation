@@ -17,6 +17,19 @@
 /obj/item/ammo_storage/magazine/mc9mm/empty
 	starting_ammo = 0
 
+/obj/item/ammo_storage/magazine/a10mm
+	name = "magazine (10mm)"
+	icon_state = "10mm"
+	origin_tech = "combat=2"
+	ammo_type = "/obj/item/ammo_casing/a10mm"
+	max_ammo = 10
+	multiple_sprites = 1
+	sprite_modulo = 10
+
+/obj/item/ammo_storage/magazine/a10mm/empty
+	starting_ammo = 0
+
+
 /obj/item/ammo_storage/magazine/a12mm
 	name = "magazine (12mm)"
 	icon_state = "12mm"

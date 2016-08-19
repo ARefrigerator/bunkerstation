@@ -87,3 +87,12 @@
 	return
 
 
+/obj/item/weapon/gun/projectile/silenced/overseer
+	name = "the overseers pistol"
+	desc = "A perfect gun to show you're on top."
+	icon_state = "overseer"
+	item_state = null
+	caliber = list("10mm"  = 1)
+	silenced = 0
+	ammo_type = "/obj/item/ammo_casing/a10mm"
+	mag_type = "/obj/item/ammo_storage/magazine/a10mm"

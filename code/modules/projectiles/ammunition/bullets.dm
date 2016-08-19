@@ -37,6 +37,12 @@
 	projectile_type = "/obj/item/projectile/bullet/weakbullet"
 	w_type = RECYK_METAL
 
+/obj/item/ammo_casing/a10mm
+	desc = "A 10mm bullet casing."
+	caliber = "10mm"
+	projectile_type = "/obj/item/projectile/bullet/midbullet"
+	w_type = RECYK_METAL
+
 /* Not entirely ready to be implemented yet. Get a server vote on bringing these in
 /obj/item/ammo_casing/c38/lethal
 	desc = "A .38 bullet casing. This is the lethal variant."
