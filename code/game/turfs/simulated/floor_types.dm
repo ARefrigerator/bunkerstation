@@ -86,6 +86,32 @@
 	floor_tile = getFromPool(/obj/item/stack/tile/wood,null)
 	..()
 
+/turf/simulated/floor/wood/nice
+	icon_state = "wood_nice"
+
+/turf/simulated/floor/wood/nice/New()
+	dir = pick(alldirs)
+	..()
+
+/turf/simulated/floor/wood/crap
+	icon_state = "wood_crap"
+
+/turf/simulated/floor/wood/crap/random/New()
+	icon_state = "[pick("","2","3")][initial(icon_state)]"
+	..()
+
+/turf/simulated/floor/subway
+	name = "tiled floor"
+	icon_state = "newbar"
+
+/turf/simulated/floor/grimy
+	icon_state = "grimy"
+
+/turf/simulated/floor/grimy/New()
+	..()
+	if(prob(30))
+		dir = pick(alldirs)
+
 /turf/simulated/floor/vault
 	icon_state = "rockvault"
 
@@ -400,3 +426,7 @@
 	oxygen=0 // BIRDS HATE OXYGEN FOR SOME REASON
 	nitrogen = MOLES_O2STANDARD+MOLES_N2STANDARD // So it totals to the same pressure
 	//icon = 'icons/turf/shuttle-debug.dmi'
+
+/turf/simulated/floor/rail
+	name = "rail"
+	icon_state = "rail"

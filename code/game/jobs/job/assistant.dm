@@ -1,3 +1,5 @@
+//May use this for latejoins in the future
+/*
 /datum/job/assistant
 	title = "Assistant"
 	flag = ASSISTANT
@@ -25,3 +27,4 @@
 		return list(access_maint_tunnels)
 	else
 		return list()
+*/

@@ -113,6 +113,10 @@
 /obj/structure/bed/chair/wood/wings/cultify()
 	return
 
+/obj/structure/bed/chair/wood/bench
+	icon_state = "capchair"
+	name = "bench"
+
 /obj/structure/bed/chair/holowood/normal
 	icon_state = "wooden_chair"
 	name = "wooden chair"

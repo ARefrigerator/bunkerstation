@@ -589,6 +589,9 @@
 	icon_state = "pokertable"
 	parts = /obj/item/weapon/table_parts/wood/poker
 
+/obj/structure/table/woodentable/nice
+	icon_state = "w_table"
+
 /*
  * Reinforced tables
  */
@@ -648,6 +651,13 @@
 		return
 	return ..()
 
+/*
+ * Stage
+ */
+/obj/structure/table/woodentable/stage
+	name = "stage"
+	desc = "A stage, put together from wood."
+	icon_state = "stage"
 /*
  * Glass
  */
@@ -818,3 +828,8 @@
 
 /obj/structure/rack/attack_tk() // no telehulk sorry
 	return
+
+/obj/structure/rack/table //Shhhh
+	name = "wooden table"
+	desc = "A single, wooden table."
+	icon_state = "woodtable_2z"

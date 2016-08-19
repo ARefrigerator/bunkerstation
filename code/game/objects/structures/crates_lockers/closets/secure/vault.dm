@@ -29,11 +29,11 @@
 /obj/structure/closet/secure_closet/vault/armory
 	name = "\improper Armory vault locker"
 	req_access = list(access_armory)
-
+/*
 /obj/structure/closet/secure_closet/vault/armory/lawgiver/New()
 	..()
 	new /obj/item/weapon/storage/lockbox/lawgiver(src)
-
+*/
 /obj/structure/closet/secure_closet/vault/vault
 	req_access = list(access_heads_vault)
 

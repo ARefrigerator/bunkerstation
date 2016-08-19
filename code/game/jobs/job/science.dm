@@ -1,3 +1,4 @@
+/*
 /datum/job/rd
 	title = "Research Director"
 	flag = RD
@@ -34,7 +35,7 @@
 	else
 		H.equip_or_collect(new H.species.survival_gear(H.back), slot_in_backpack)
 	return 1
-
+*/
 /datum/job/scientist
 	title = "Scientist"
 	flag = SCIENTIST
@@ -42,19 +43,19 @@
 	faction = "Station"
 	total_positions = 5
 	spawn_positions = 3
-	supervisors = "the research director"
+	supervisors = "the manager"
 	selection_color = "#ffeeff"
 	idtype = /obj/item/weapon/card/id/research
 	access = list(access_robotics, access_tox, access_tox_storage, access_research, access_xenobiology)
 	minimal_access = list(access_tox, access_tox_storage, access_research, access_xenobiology)
-	alt_titles = list("Xenoarcheologist", "Anomalist", "Plasma Researcher", "Xenobiologist", "Research Botanist")
+//	alt_titles = list("Xenoarcheologist", "Anomalist", "Plasma Researcher", "Xenobiologist", "Research Botanist")
 
 	pdaslot=slot_belt
 	pdatype=/obj/item/device/pda/toxins
 
 /datum/job/scientist/equip(var/mob/living/carbon/human/H)
 	if(!H)	return 0
-	if(H.mind.role_alt_title == "Research Botanist")
+/*	if(H.mind.role_alt_title == "Research Botanist")
 		H.equip_or_collect(new /obj/item/device/radio/headset/headset_servsci(H), slot_ears)
 	else
 		H.equip_or_collect(new /obj/item/device/radio/headset/headset_sci(H), slot_ears)
@@ -72,8 +73,8 @@
 		if("Research Botanist")
 			H.equip_or_collect(new /obj/item/clothing/under/rank/scientist(H), slot_w_uniform)
 			H.equip_or_collect(new /obj/item/device/analyzer/plant_analyzer(H), slot_s_store)
-			H.equip_or_collect(new /obj/item/clothing/gloves/botanic_leather(H), slot_gloves)
-
+			H.equip_or_collect(new /obj/item/clothing/gloves/botanic_leather(H), slot_gloves)*/
+	H.equip_or_collect(new /obj/item/clothing/under/rank/scientist(H), slot_w_uniform)
 	if(H.backbag == 3)
 		H.equip_or_collect(new /obj/item/weapon/storage/backpack/satchel_tox(H), slot_back)
 
@@ -84,7 +85,7 @@
 	else
 		H.equip_or_collect(new H.species.survival_gear(H.back), slot_in_backpack)
 	return 1
-
+/*
 /datum/job/roboticist
 	title = "Roboticist"
 	flag = ROBOTICIST
@@ -123,3 +124,4 @@
 	else
 		H.equip_or_collect(new H.species.survival_gear(H.back), slot_in_backpack)
 	return 1
+*/

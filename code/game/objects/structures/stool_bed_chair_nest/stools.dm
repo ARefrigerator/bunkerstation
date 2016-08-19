@@ -2,7 +2,7 @@
 	name = "stool"
 	desc = "Apply butt."
 	icon = 'icons/obj/stools-chairs-beds.dmi'
-	icon_state = "stool"
+	icon_state = "barstool"
 	inhand_states = list("left_hand" = 'icons/mob/in-hand/left/newsprites_lefthand.dmi', "right_hand" = 'icons/mob/in-hand/right/newsprites_righthand.dmi')
 	force = 10
 	throwforce = 10

@@ -1,3 +1,4 @@
+/*
 /datum/job/chief_engineer
 	title = "Chief Engineer"
 	flag = CHIEF
@@ -41,22 +42,22 @@
 		else
 			H.equip_or_collect(new /obj/item/weapon/storage/box/survival/engineer(H.back), slot_in_backpack)
 		return 1
-
+*/
 
 
 /datum/job/engineer
-	title = "Station Engineer"
+	title = "Engineer"
 	flag = ENGINEER
 	department_flag = ENGSEC
 	faction = "Station"
 	total_positions = 5
 	spawn_positions = 5
-	supervisors = "the chief engineer"
+	supervisors = "the manager"
 	selection_color = "#fff5cc"
 	idtype = /obj/item/weapon/card/id/engineering
 	access = list(access_eva, access_engine, access_engine_equip, access_tech_storage, access_maint_tunnels, access_external_airlocks, access_construction, access_atmospherics)
 	minimal_access = list(access_engine, access_engine_equip, access_tech_storage, access_maint_tunnels, access_external_airlocks, access_construction)
-	alt_titles = list("Maintenance Technician","Engine Technician","Electrician")
+//	alt_titles = list("Maintenance Technician","Engine Technician","Electrician")
 
 	pdaslot=slot_l_store
 	pdatype=/obj/item/device/pda/engineering
@@ -69,7 +70,7 @@
 			if(2) H.equip_or_collect(new /obj/item/weapon/storage/backpack/industrial(H), slot_back)
 			if(3) H.equip_or_collect(new /obj/item/weapon/storage/backpack/satchel_eng(H), slot_back)
 			if(4) H.equip_or_collect(new /obj/item/weapon/storage/backpack/satchel(H), slot_back)
-		switch(H.mind.role_alt_title)
+/*		switch(H.mind.role_alt_title)
 			if("Station Engineer")
 				H.equip_or_collect(new /obj/item/clothing/under/rank/engineer(H), slot_w_uniform)
 			if("Maintenance Technician")
@@ -77,7 +78,7 @@
 			if("Electrician")
 				H.equip_or_collect(new /obj/item/clothing/under/rank/electrician(H), slot_w_uniform)
 			if("Engine Technician")
-				H.equip_or_collect(new /obj/item/clothing/under/rank/engine_tech(H), slot_w_uniform)
+				H.equip_or_collect(new /obj/item/clothing/under/rank/engine_tech(H), slot_w_uniform)*/
 		H.equip_or_collect(new /obj/item/clothing/shoes/orange(H), slot_shoes)
 		H.equip_or_collect(new /obj/item/weapon/storage/belt/utility/full(H), slot_belt)
 		H.equip_or_collect(new /obj/item/clothing/head/hardhat(H), slot_head)
@@ -90,7 +91,7 @@
 		return 1
 
 
-
+/*
 /datum/job/atmos
 	title = "Atmospheric Technician"
 	flag = ATMOSTECH
@@ -124,7 +125,8 @@
 		else
 			H.equip_or_collect(new /obj/item/weapon/storage/box/survival/engineer(H.back), slot_in_backpack)
 		return 1
-
+*/
+/*
 /datum/job/mechanic
 	title = "Mechanic"
 	flag = MECHANIC
@@ -167,3 +169,4 @@
 		else
 			H.equip_or_collect(new /obj/item/weapon/storage/box/survival/engineer(H.back), slot_in_backpack)
 		return 1
+*/

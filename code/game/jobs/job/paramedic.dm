@@ -1,3 +1,4 @@
+/*
 /datum/job/paramedic
 	title = "Paramedic"
 	flag = PARAMEDIC
@@ -32,3 +33,4 @@
 			H.equip_or_collect(new /obj/item/weapon/storage/box/survival/engineer(H.back), slot_in_backpack)
 			H.equip_or_collect(new /obj/item/device/healthanalyzer(H.back), slot_in_backpack)
 		return 1
+*/

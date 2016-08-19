@@ -61,6 +61,11 @@
 		qdel(src)
 		qdel(W)
 
+/obj.item/weapon/wrench/old
+	name = "rusted wrench"
+	desc = "An old wrench, rusted with time."
+	icon_state = "wrench_old"
+
 //we inherit a lot from wrench, so we change very little
 /obj/item/weapon/wrench/socket
 	name = "socket wrench"
@@ -195,6 +200,18 @@
 		return
 	else
 		..()
+/obj/item/weapon/wirecutters/old
+	name = "old wirecutters"
+	desc = "These wirecutters have not dealt with time well."
+	icon_state = "cutters_old"
+
+/obj/item/weapon/wirecutters/old/New()
+	. = ..()
+
+	if(prob(50))
+		icon_state = "cutters-y_old"
+		item_state = "cutters_yellow"
+/
 /*
  * Welding Tool
  */
@@ -558,6 +575,11 @@
 	suicide_act(mob/user)
 		to_chat(viewers(user), "<span class='danger'>[user] is smashing \his head in with the [src.name]! It looks like \he's  trying to commit suicide!</span>")
 		return (BRUTELOSS)
+
+/obj/item/weapon/crowbar/old
+	name = "rusted crowbar"
+	desc = "An older crowbar, the end has been sanded down to be more effective. That, or the tip just broke off."
+	icon_state = "crowbar_old"
 
 /obj/item/weapon/crowbar/red
 	desc = "Rise and shine."

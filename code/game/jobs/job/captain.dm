@@ -1,11 +1,11 @@
 /datum/job/captain
-	title = "Captain"
+	title = "Bunker Overseer"//"Captain"
 	flag = CAPTAIN
 	department_flag = ENGSEC
 	faction = "Station"
 	total_positions = 1
 	spawn_positions = 1
-	supervisors = "Nanotrasen officials and Space law"
+	supervisors = "Bunker Rules and Regulations"
 	selection_color = "#ccccff"
 	idtype = /obj/item/weapon/card/id/gold
 	req_admin_notify = 1
@@ -52,13 +52,13 @@
 
 
 /datum/job/hop
-	title = "Head of Personnel"
+	title = "Bunker Manager"//"Head of Personnel"
 	flag = HOP
 	department_flag = CIVILIAN
-	faction = "Station"
+	faction = "Bunker"
 	total_positions = 1
 	spawn_positions = 1
-	supervisors = "the captain"
+	supervisors = "the overseer"
 	selection_color = "#ddddff"
 	idtype = /obj/item/weapon/card/id/silver
 	req_admin_notify = 1

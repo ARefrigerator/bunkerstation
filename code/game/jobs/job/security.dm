@@ -1,11 +1,11 @@
 /datum/job/hos
-	title = "Head of Security"
+	title = "Head Peacekeeper"
 	flag = HOS
 	department_flag = ENGSEC
 	faction = "Station"
 	total_positions = 1
 	spawn_positions = 1
-	supervisors = "the captain"
+	supervisors = "the overseer"
 	selection_color = "#ffdddd"
 	idtype = /obj/item/weapon/card/id/hos
 	req_admin_notify = 1
@@ -99,7 +99,7 @@
 		return 1
 
 
-
+/*
 /datum/job/detective
 	title = "Detective"
 	flag = DETECTIVE
@@ -169,17 +169,17 @@
 		H.mutations += M_SOBER
 		H.check_mutations = 1
 		return 1
-
+*/
 
 
 /datum/job/officer
-	title = "Security Officer"
+	title = "Peacekeeper"
 	flag = OFFICER
 	department_flag = ENGSEC
 	faction = "Station"
 	total_positions = 5
 	spawn_positions = 5
-	supervisors = "the head of security"
+	supervisors = "the head peacekeeper"
 	selection_color = "#ffeeee"
 	idtype = /obj/item/weapon/card/id/security
 	access = list(access_weapons, access_security, access_sec_doors, access_brig, access_court, access_maint_tunnels, access_morgue, access_eva)

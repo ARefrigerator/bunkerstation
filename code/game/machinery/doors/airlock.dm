@@ -73,12 +73,12 @@
 
 /obj/machinery/door/airlock/security
 	name = "Airlock"
-	icon = 'icons/obj/doors/Doorsec.dmi'
+	icon = 'icons/obj/doors/bunker/sec1.dmi'
 	assembly_type = /obj/structure/door_assembly/door_assembly_sec
 
 /obj/machinery/door/airlock/engineering
 	name = "Airlock"
-	icon = 'icons/obj/doors/Dooreng.dmi'
+	icon = 'icons/obj/doors/bunker/engi1.dmi'
 	assembly_type = /obj/structure/door_assembly/door_assembly_eng
 
 /obj/machinery/door/airlock/medical
@@ -152,7 +152,7 @@
 
 /obj/machinery/door/airlock/glass_engineering
 	name = "Maintenance Hatch"
-	icon = 'icons/obj/doors/Doorengglass.dmi'
+	icon = 'icons/obj/doors/bunker/engiglass2.dmi'
 	opacity = 0
 	assembly_type = /obj/structure/door_assembly/door_assembly_eng
 	glass = 1
@@ -160,7 +160,7 @@
 
 /obj/machinery/door/airlock/glass_security
 	name = "Maintenance Hatch"
-	icon = 'icons/obj/doors/Doorsecglass.dmi'
+	icon = 'icons/obj/doors/bunker/secglass2.dmi'
 	opacity = 0
 	assembly_type = /obj/structure/door_assembly/door_assembly_sec
 	glass = 1
@@ -196,7 +196,7 @@
 
 /obj/machinery/door/airlock/glass_research
 	name = "Maintenance Hatch"
-	icon = 'icons/obj/doors/doorresearchglass.dmi'
+	icon = 'icons/obj/doors/bunker/randdglass2.dmi'
 	opacity = 0
 	assembly_type = /obj/structure/door_assembly/door_assembly_research
 	glass = 1
