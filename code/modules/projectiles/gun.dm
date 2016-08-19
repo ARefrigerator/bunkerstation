@@ -49,6 +49,25 @@
 
 	var/conventional_firearm = 1	//Used to determine whether, when examined, an /obj/item/weapon/gun/projectile will display the amount of rounds remaining.
 	var/saftey = 1 //Whether or not the saftey is on. 0 is off, 1 is on
+	var/jamchance = 0 //The probability the gun will jam.
+	var/jammed = 0 //Whether or not the gun is jammed. 1 means it is.
+
+/*
+###JAMMING AND SAFTEY BABY!###
+*/
+obj/item/weapon/gun/proc/jam()	
+	if(!jammed && prob(jamchance))//Checking to see whether or not it'll jam. If it's alreayd jammed it's not going to jam it again.
+		jammed = 1
+		return 1 
+	else 
+		return 0
+/obj/item/weapon/gun/verb/unjam(mob/user)//Leaving this as a verb until right click procs are in place.
+	if(jammed)
+		jammed = 0
+		user.visible_message("<span class='warning'>[user] unjams their gun!</span>", \
+		"<span class='warning'>You unjam your gun!</span>")
+	else 
+		to_chat(user, "<span class='notice'>Your gun isn't jammed.</span>")
 
 /obj/item/weapon/gun/AltClick(var/mob/user)//Toggling that saftey fam.
 	if(user.get_active_hand() != src) return 0	//If it's not in your active hand than it won't toggle.
@@ -60,9 +79,12 @@
 		to_chat(user, "<span class='warning'>You flick the saftey on, it's safer this way.")
 /obj/item/weapon/gun/examine(mob/user)
 	..()
+	if(jammed)
+		to_chat(user, "<span class='warning'>A bullet seems to be stuck in it.")
+
 	if(saftey)
 		to_chat(user, "<span class='warning'>The saftey appears to be on.")
-	else
+	if(!saftey)
 		to_chat(user, "<span class='warning'>The saftey is off!")
 
 
@@ -114,7 +136,17 @@
 			to_chat(user, "<span class='warning'>You don't have the dexterity to do this!</span>")
 		return 0
 	
-	if(saftey)
+	if(jam())//Whether or not the gun jams.
+		to_chat(user, "<span class='warning'>The weapon jams!</span>")
+		playsound(user,'sound/effects/jam.ogg', 100, 1)
+		return 0
+
+	if(jammed)//Checking whether or not it's already jammed.
+		to_chat(user, "<span class='warning'>The gun is jammed!</span>")
+		playsound(user, empty_sound, 100, 1)
+		return 0
+
+	if(saftey)//Checking to see if the saftey is on.
 		to_chat(user, "<span class='warning'>The saftey is on!</span>")
 		playsound(user, empty_sound, 100, 1)
 		return 0
