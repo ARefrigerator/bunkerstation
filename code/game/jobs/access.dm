@@ -373,7 +373,8 @@
 		if(access_cmo)
 			return "Chief Medical Officer"
 		if(access_qm)
-			return "Quartermaster"
+			return "Munitions Officer"
+//			return "Quartermaster"
 		if(access_clown)
 			return "HONK! Access"
 		if(access_mime)

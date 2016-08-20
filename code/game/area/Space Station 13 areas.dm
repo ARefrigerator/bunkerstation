@@ -1478,7 +1478,7 @@ proc/process_adminbus_teleport_locs()
 	icon_state = "security"
 
 /area/supply
-	name = "\improper Quartermasters"
+	name = "\improper Munitions"
 	icon_state = "quart"
 
 ///////////WORK IN PROGRESS//////////
@@ -1502,7 +1502,7 @@ proc/process_adminbus_teleport_locs()
 	icon_state = "cargo_bay"
 
 /area/supply/qm
-	name = "\improper Quartermaster's Office"
+	name = "\improper Munitions Officer's Office"
 	icon_state = "cargo_quart"
 	jammed=1
 

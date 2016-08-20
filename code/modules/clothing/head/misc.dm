@@ -183,6 +183,13 @@
 	desc = "Goes well with celery."
 	flags = FPRINT
 
+/obj/item/clothing/head/mco
+	name = "munitions cap"
+	desc = "A cap worn by members of munitions."
+	icon_state = "mco_hat"
+	item_state = "mco_hat"
+	flags = FPRINT
+
 /obj/item/clothing/head/squatter_hat
 	name = "slav squatter hat"
 	icon_state = "squatter_hat"

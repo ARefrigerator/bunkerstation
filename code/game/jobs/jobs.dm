@@ -88,8 +88,10 @@ var/list/civilian_positions = list(
 )
 var/list/cargo_positions = list(
 	"Manager",
-	"Quartermaster",
-	"Cargo Technician"
+	"Munitions Officer",
+	"Munitions Technician"
+//	"Quartermaster",
+//	"Cargo Technician"
 )
 
 var/list/security_positions = list(

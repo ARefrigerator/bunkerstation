@@ -129,7 +129,7 @@
 
 //Cargo
 /datum/job/qm
-	title = "Quartermaster"
+	title = "Munitions Officer"//"Quartermaster"
 	flag = QUARTERMASTER
 	department_flag = ENGSEC
 	faction = "Station"
@@ -162,13 +162,13 @@
 
 
 /datum/job/cargo_tech
-	title = "Cargo Technician"
+	title = "Munitions Technician"//"Cargo Technician"
 	flag = CARGOTECH
 	department_flag = ENGSEC
 	faction = "Station"
 	total_positions = 2
 	spawn_positions = 2
-	supervisors = "the quartermaster and the head of personnel"
+	supervisors = "the munitions officer and the manager"
 	selection_color = "#dddddd"
 	idtype = /obj/item/weapon/card/id/supply
 	access = list(access_maint_tunnels, access_mailsorting, access_cargo, access_cargo_bot, access_mint, access_mining, access_mining_station, access_taxi)

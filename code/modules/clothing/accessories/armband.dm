@@ -7,7 +7,8 @@
 	accessory_exclusion = ARMBAND
 
 /obj/item/clothing/accessory/armband/cargo
-	name = "cargo bay guard armband"
+//	name = "cargo bay guard armband"
+	name = "munitions bay guard armband"
 	desc = "An armband, worn by the station's security forces to display which department they're assigned to. This one is brown."
 	icon_state = "cargo"
 	_color = "cargo"
