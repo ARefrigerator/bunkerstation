@@ -325,7 +325,8 @@
 		if("Magistrate", "Internal Affairs Agent")
 			favoured_types = list(/obj/item/clothing, /obj/item/weapon/stamp/law, /obj/item/weapon/paper)
 			functions += "paperwork"
-		if("Quartermaster", "Cargo Technician")
+//		if("Quartermaster", "Cargo Technician")
+		if("Munitions Technician", "Munitions Officer")
 			favoured_types = list(/obj/item/clothing, /obj/item/weapon/stamp/granted, /obj/item/weapon/stamp/denied, /obj/item/weapon/paper, /obj/item/weapon/clipboard)
 			functions += "stamping"
 		if("Chef")

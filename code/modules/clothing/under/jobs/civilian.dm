@@ -21,21 +21,21 @@
 
 
 /obj/item/clothing/under/rank/cargo
-	name = "quartermaster's jumpsuit"
-	desc = "It's a jumpsuit worn by the quartermaster. It's specially designed to prevent back injuries caused by pushing paper."
-	icon_state = "qm"
+	name = "munitions officer's jumpsuit"
+	desc = "It's a jumpsuit worn by the munitions officer. It's specially designed to prevent back injuries caused by pushing paper."
+	icon_state = "mco"
 	item_state = "lb_suit"
-	_color = "qm"
+	_color = "mco"
 	flags = FPRINT  | ONESIZEFITSALL
 	species_fit = list(VOX_SHAPED)
 
 
 /obj/item/clothing/under/rank/cargotech
-	name = "cargo technician's jumpsuit"
-	desc = "Shooooorts! They're comfy and easy to wear!"
-	icon_state = "cargotech"
+	name = "munitions technician's jumpsuit"
+	desc = "This one has no shorts, aw..."//"Shooooorts! They're comfy and easy to wear!"
+	icon_state = "mco_tech"
 	item_state = "lb_suit"
-	_color = "cargo"
+	_color = "mco_tech"
 	flags = FPRINT  | ONESIZEFITSALL
 	species_fit = list(VOX_SHAPED)
 

@@ -596,7 +596,8 @@ var/global/list/whitelisted_species = list("Human")
 		if("Janitor")
 			suit=/obj/item/clothing/suit/space/vox/civ/janitor
 			helm=/obj/item/clothing/head/helmet/space/vox/civ/janitor
-		if("Cargo Technician","Quartermaster")
+//		if("Cargo Technician","Quartermaster")
+		if("Munitions Technician", "Munitions Officer")
 			suit=/obj/item/clothing/suit/space/vox/civ/cargo
 			helm=/obj/item/clothing/head/helmet/space/vox/civ/cargo
 		if("Chaplain")
