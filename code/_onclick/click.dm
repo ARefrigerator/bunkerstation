@@ -200,14 +200,14 @@
 */
 /mob/proc/MiddleClickOn(var/atom/A)
 	return
+/*
 /mob/living/carbon/MiddleClickOn(var/atom/A)
 	swap_hand()
-
-// In case of use break glass
-/*
-/atom/proc/MiddleClick(var/mob/M as mob)
-	return
 */
+
+/atom/proc/MiddleClick(var/mob/M as mob)//This shall get much use.
+	return
+
 
 /*
 	Right Click
